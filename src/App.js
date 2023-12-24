@@ -122,6 +122,12 @@ export default function App() {
     })
   }, [currentUser]);
 
+  // Sortby function
+
+  const [sortBy, setSortBy] = useState("name"); // Default sorting by name
+  const [sortOrder, setSortOrder] = useState("asc"); // Default sorting order is ascending
+
+
   // Main content of homescreen. This is displayed conditionally from user auth status
 
   function mainContent() {
@@ -146,6 +152,17 @@ export default function App() {
   const MenuBar = () => {
     return(
     <AppBar position="absolute" open={open}>
+          // Sortby
+          <Button variant="contained" size="small" onClick={() => toggleSortBy("name")}>
+            Sort By Name
+          </Button>
+          <Button variant="contained" size="small" onClick={() => toggleSortBy("dateAdded")}>
+            Sort By Date Added
+          </Button>
+          <Button variant="contained" size="small" onClick={() => toggleSortBy("industry")}>
+            Sort By Industry
+          </Button>
+
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
