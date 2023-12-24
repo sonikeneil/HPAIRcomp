@@ -199,7 +199,7 @@ export default function App() {
                 display: isSignedIn ? 'inline' : 'none'
               }}
             >
-              Signed in as {firebase.auth().currentUser?.displayName}
+              Siggned in as {firebase.auth().currentUser?.displayName}
             </Typography>
             <Button variant="contained" size="small"
               sx={{
