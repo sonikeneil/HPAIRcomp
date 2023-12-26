@@ -73,7 +73,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#A41034', // Red color
+    },
+  },
+});
 
 // App.js is the homepage and handles top-level functions like user auth.
 
@@ -97,7 +103,7 @@ export default function App() {
 
   // Navbar drawer functionality
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
